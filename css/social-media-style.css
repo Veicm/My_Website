@@ -1,0 +1,11 @@
+headline {
+    text-align: center;
+}
+headline h1 {
+    color: rgb(0, 255, 65);
+    font-family:'Courier New', Courier, monospace; /*cyper*/
+    font-size: 45px ;
+}
+description p {
+    width: 600px;
+}

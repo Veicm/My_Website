@@ -6,3 +6,12 @@ html {
 a {
     text-decoration: none;
 }
+a:link, a:visited {
+    color: rgb(0, 81, 255);
+}
+a:hover {
+    color: rgb(0, 22, 218);
+}
+a:active {
+    color: rgb(59, 128, 255);
+}
