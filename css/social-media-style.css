@@ -7,6 +7,6 @@ headline h1 {
     font-size: 45px ;
 }
 description p {
-    text-align: left;
-    margin-right: 250px;
+    text-align: justify;
+    margin-right: 30%;
 }
