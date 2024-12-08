@@ -30,3 +30,8 @@ headline p {
     font-family: 'Times New Roman', Times, serif; /*Kursiv*/
     font-size: 20px;
 }
+
+
+.e-mail {
+    color: rgb(4, 190, 113);
+}
