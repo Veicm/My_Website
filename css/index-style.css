@@ -19,3 +19,8 @@ header a:hover {
 header a:active {
     color: rgb(59, 128, 255);
 }
+
+about-me p {
+    text-align: justify;
+    margin-right: 30%;
+}
