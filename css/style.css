@@ -24,7 +24,7 @@ headline h1 {
     color: rgb(0, 255, 65);
     font-family:'Courier New', Courier, monospace; /*cyper*/
     font-size: 45px ;
-}
+    text-shadow: 0px 0px 20px rgb(0, 255, 65)}
 headline p {
     color: rgb(0, 153, 38);
     font-family: 'Times New Roman', Times, serif; /*Kursiv*/

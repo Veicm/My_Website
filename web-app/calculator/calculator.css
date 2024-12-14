@@ -42,10 +42,16 @@ button {
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms ease-in-out;
 }
 
 button:hover {
     background-color: rgb(40, 40, 40);
+    transform: scale(1.1);
+    
 }
 button:active {
     background-color: rgb(82, 82, 82);
