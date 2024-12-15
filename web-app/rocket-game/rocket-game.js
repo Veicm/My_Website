@@ -1,5 +1,5 @@
 const app = new PIXI.Application();
-const ufoList = []
+const ufoList = [];
 
 document.body.appendChild(app.view);
 
@@ -11,8 +11,8 @@ rocket.scale.y = 0.05;
 app.stage.addChild(rocket);
 
 gameInterval(function() {
-    const ufo = PIXI.Sprite.from('assets/ufo' + random(1,2) + '.png');
-    ufo.x = random(0, 700);
+    const ufo = PIXI.Sprite.from('assets/ufo' + random(1, 2) + '.png');
+    ufo.x = random(0, 755);
     ufo.y = -35;
     ufo.scale.x = 0.07;
     ufo.scale.y = 0.07;
@@ -26,14 +26,18 @@ gameInterval(function() {
     });
 }, 300);
 
-
-
 function leftKeyPressed() {
     rocket.x -= 5;
+    if (rocket.x < 1) {
+        rocket.x = 1;
+    }
 }
 
 function rightKeyPressed() {
     rocket.x += 5;
+    if (rocket.x >755) {
+        rocket.x = 755;
+    }
 }
 
 function spaceKeyPressed() {
@@ -50,5 +54,61 @@ function spaceKeyPressed() {
         app.stage.removeChild(ufo);
     });
 }
+
+// make ufos disappear to save system resources 
+
+gameInterval(function() {
+    ufoList.forEach(function(ufo) {
+        if (ufo.y > 600) {
+            app.stage.removeChild(ufo);
+            ufoList.splice(ufoList.indexOf(ufo), 1);
+        }
+    });
+}, 1000);
+
+// make bullets disappear to save system resources
+
+gameInterval(function() {
+    app.stage.children.forEach(function(child) {
+        if (child.y < -50) {
+            app.stage.removeChild(child);
+        }
+    });
+}, 50);
+
+
+
+
+// Focus canvas on mouse enter/leave
+
+let isCanvasFocused = false;
+
+app.view.addEventListener('mouseenter', () => {
+    isCanvasFocused = true;
+});
+
+app.view.addEventListener('mouseleave', () => {
+    isCanvasFocused = false;
+});
+
+window.addEventListener('keydown', (event) => {
+    if (isCanvasFocused) {
+        switch(event.key) {
+            case 'ArrowLeft':
+                event.preventDefault();
+                leftKeyPressed();
+                break;
+            case 'ArrowRight':
+                event.preventDefault();
+                rightKeyPressed();
+                break;
+            case ' ':
+                event.preventDefault();
+                spaceKeyPressed();
+                break;
+        }
+    }
+});
+
 
 
