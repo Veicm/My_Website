@@ -41,10 +41,24 @@ function rightKeyPressed() {
     }
 }
 
+function upKeyPressed() {
+    rocket.y -= 5;
+    if (rocket.y < 1) {
+        rocket.y = 1;
+    }
+}
+
+function downKeyPressed() {
+    rocket.y += 5;
+    if (rocket.y > 530) {
+        rocket.y = 530;
+    }
+}
+
 function spaceKeyPressed() {
     const bullet = PIXI.Sprite.from('assets/bullet.png');
     bullet.x = rocket.x + 14;
-    bullet.y = 500;
+    bullet.y = rocket.y - 20;
     bullet.scale.x = 0.02;
     bullet.scale.y = 0.02;
     app.stage.addChild(bullet);
