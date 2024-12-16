@@ -3,6 +3,10 @@ html {
     touch-action: manipulation;
 }
 
+body {
+    min-width: 1000px;
+}
+
 game {
     display: flex;
     justify-content: center;

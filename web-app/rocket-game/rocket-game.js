@@ -117,6 +117,14 @@ window.addEventListener('keydown', (event) => {
                 event.preventDefault();
                 rightKeyPressed();
                 break;
+            case 'ArrowUp':
+                event.preventDefault();
+                upKeyPressed();
+                break;
+            case 'ArrowDown':
+                event.preventDefault();
+                downKeyPressed();
+                break;
             case ' ':
                 event.preventDefault();
                 spaceKeyPressed();
