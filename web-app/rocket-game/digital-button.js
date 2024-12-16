@@ -72,3 +72,57 @@ down.addEventListener('mouseup', () => {
 down.addEventListener('mouseleave', () => {
     clearInterval(intervalId);
 });
+
+
+
+
+
+// touch screen
+
+shoot.addEventListener('touchstart', (event) => {
+    intervalId = setInterval(spaceKeyPressed, 100);
+});
+
+shoot.addEventListener('touchend', () => {
+    clearInterval(intervalId);
+});
+
+
+
+left.addEventListener('touchstart', (event) => {
+    intervalId = setInterval(leftKeyPressed, 20);
+});
+
+left.addEventListener('touchend', () => {
+    clearInterval(intervalId);
+});
+
+
+
+right.addEventListener('touchstart', (event) => {
+    intervalId = setInterval(rightKeyPressed, 20);
+});
+
+right.addEventListener('touchend', () => {
+    clearInterval(intervalId);
+});
+
+
+
+up.addEventListener('touchstart', (event) => {
+    intervalId = setInterval(upKeyPressed, 20);
+});
+
+up.addEventListener('touchend', () => {
+    clearInterval(intervalId);
+});
+
+
+
+down.addEventListener('touchstart', (event) => {
+    intervalId = setInterval(downKeyPressed, 20);
+});
+
+down.addEventListener('touchend', () => {
+    clearInterval(intervalId);
+});
