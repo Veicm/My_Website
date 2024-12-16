@@ -1,6 +1,6 @@
-body {
+html {
     background-color: rgb(34, 34, 34);
-    height: 100%;
+    touch-action: manipulation;
 }
 
 game {
@@ -29,6 +29,7 @@ button {
     -webkit-user-select: none; 
     -moz-user-select: none; 
     -ms-user-select: none;
+    background-color: rgb(26, 26, 26);
 }
 
 
