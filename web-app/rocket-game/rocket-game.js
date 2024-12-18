@@ -1,5 +1,8 @@
 const app = new PIXI.Application();
+const display = document.getElementById('display');
+let score = 0;
 const ufoList = [];
+
 
 const container = document.getElementById('canvas-container');
 container.appendChild(app.view);
@@ -23,6 +26,7 @@ gameInterval(function() {
 
     waitForCollision(ufo, rocket).then(function() {
         app.stage.removeChild(rocket);
+        value = 0;
         stopGame();
     });
 }, 300);
@@ -67,6 +71,8 @@ function spaceKeyPressed() {
     waitForCollision(bullet, ufoList).then(function([bullet, ufo]) {
         app.stage.removeChild(bullet);
         app.stage.removeChild(ufo);
+        score += 1;
+        display.value = score;
     });
 }
 
@@ -91,7 +97,20 @@ gameInterval(function() {
     });
 }, 50);
 
-
+function checkForDespawn(ufo) {
+    const despawnInterval = setInterval(() => {
+        if (ufo.y > app.view.height) {
+            app.stage.removeChild(ufo);
+            const index = ufoList.indexOf(ufo);
+            if (index > -1) {
+                ufoList.splice(index, 1);
+            }
+            clearInterval(despawnInterval);
+            score -= 1;
+            display.value = score;
+        }
+    }, 100);
+}
 
 
 // Focus canvas on mouse enter/leave

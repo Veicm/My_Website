@@ -81,6 +81,7 @@ down.addEventListener('mouseleave', () => {
 
 shoot.addEventListener('touchstart', (event) => {
     intervalId = setInterval(spaceKeyPressed, 100);
+    event.preventDefault();
 });
 
 shoot.addEventListener('touchend', () => {
@@ -91,6 +92,7 @@ shoot.addEventListener('touchend', () => {
 
 left.addEventListener('touchstart', (event) => {
     intervalId = setInterval(leftKeyPressed, 20);
+    event.preventDefault();
 });
 
 left.addEventListener('touchend', () => {
@@ -101,6 +103,7 @@ left.addEventListener('touchend', () => {
 
 right.addEventListener('touchstart', (event) => {
     intervalId = setInterval(rightKeyPressed, 20);
+    event.preventDefault();
 });
 
 right.addEventListener('touchend', () => {
@@ -111,6 +114,7 @@ right.addEventListener('touchend', () => {
 
 up.addEventListener('touchstart', (event) => {
     intervalId = setInterval(upKeyPressed, 20);
+    event.preventDefault();
 });
 
 up.addEventListener('touchend', () => {
@@ -121,6 +125,7 @@ up.addEventListener('touchend', () => {
 
 down.addEventListener('touchstart', (event) => {
     intervalId = setInterval(downKeyPressed, 20);
+    event.preventDefault();
 });
 
 down.addEventListener('touchend', () => {
