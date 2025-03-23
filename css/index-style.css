@@ -65,3 +65,7 @@ about-me p {
 .dropdown:hover .dropdown-content {
     display: block;
   }
+
+.dropdown:active .dropdown-content {
+   display: block;
+}
